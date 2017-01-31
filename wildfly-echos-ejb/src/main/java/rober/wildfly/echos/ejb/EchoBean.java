@@ -36,7 +36,9 @@ public class EchoBean implements IEcho {
 
 	@Override
 	public Echo getEchoById(int p_id) {
-		return oEntityManager.find(Echo.class, p_id);
+		Echo echo = (Echo)oEntityManager.createNamedQuery("Echo.findByID").setParameter("id", p_id).getSingleResult();
+		//return oEntityManager.find(Echo.class, p_id);
+		return echo;
 	}
 
 	@Override
