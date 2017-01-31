@@ -8,6 +8,7 @@ import javax.naming.NamingException;
 
 import rober.wildfly.echos.common.IEcho;
 
+
 //Jar with dependencies futtatasa
 public class Main {
 	private IEcho oIEcho = null;
