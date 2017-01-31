@@ -9,11 +9,35 @@
 <title>wildfly-echos-web | echo_list</title>
 </head>
 <body>
+<<<<<<< HEAD
 	echo_list
 	<br /> name    	 date
 	<br />
 	<ui:repeat value="#{echoer.allEchos}" var="value">
     #{value.message} <br />
 	</ui:repeat>
+=======
+echo_list - #{echoer.name} - #{echoer.store} - #{echoer.allEchos}
+<br />
+<br />
+ <h1>JSF 2 param example</h1>
+
+      <h:form id="form">
+
+	Enter id to search for:
+	<h:inputText size="10" value="#{echoer.id}" />
+
+	<br /><br />
+
+	<h:commandButton id="submitButton"
+		value="Search" action="#{echoer.getEchoById(echoer.id)}">
+
+		
+
+	</h:commandButton>
+
+      </h:form>
+---#{echoer.echo}---
+>>>>>>> branch 'getByID' of https://github.com/MRoberr/wildfly-echos.git
 </body>
 </html> 

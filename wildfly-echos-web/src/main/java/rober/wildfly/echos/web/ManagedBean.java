@@ -20,6 +20,9 @@ public class ManagedBean implements Serializable, IEcho {
 	private int searchId;
 	private List<Echo> oEchos=null;
 	
+	private Integer id = null;
+	private Echo oEcho = null;
+
 	public String getName() {
 		return "I am the ECHO bean.";
 	}
@@ -35,7 +38,15 @@ public class ManagedBean implements Serializable, IEcho {
 		}
 		return oEchoBean;
 	}
-	
+	public Integer getId(){
+		return this.id;
+	}
+	public void setId(Integer p_id){
+		this.id = p_id;
+	}
+	public Echo getEcho(){
+		return this.oEcho;
+	}
 	public int getStore() {
 		return storeEcho("Halihó őŐűŰ");
 	}
@@ -47,13 +58,15 @@ public class ManagedBean implements Serializable, IEcho {
 
 	@Override
 	public Echo getEchoById(int p_id) {
-		return getEchoBean().getEchoById(p_id);
+		this.oEcho = getEchoBean().getEchoById(p_id);
+		return this.oEcho;
 	}
 
 	@Override
 	public List<Echo> getAllEchos() {
 		return getEchoBean().getAllEchos();
 	}
+
 
 	@Override
 	public List<Echo> searchEchos(String message) {	
@@ -72,5 +85,4 @@ public class ManagedBean implements Serializable, IEcho {
 	public List<Echo> getoEchos() {
 		return oEchos;
 	}
-
 }

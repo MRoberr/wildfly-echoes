@@ -12,7 +12,8 @@ import javax.persistence.*;
 @Table(name="echos")
 @NamedQueries({
 	@NamedQuery(name="Echo.findAll", query="SELECT e FROM Echo e"),
-	@NamedQuery(name="Echo.countAll", query="select count(e) from Echo e")
+	@NamedQuery(name="Echo.countAll", query="select count(e) from Echo e"),
+	@NamedQuery(name="Echo.findByID", query="SELECT e FROM Echo e WHERE e.id = :id")
 	})
 public class Echo implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -45,6 +46,11 @@ public class Echo implements Serializable {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	
+	@Override
+	public String toString(){
+		return this.getId() + " " + this.getMessage();
 	}
 
 }

@@ -12,16 +12,25 @@
 	<dependencies>
 		<dependency>
 			<groupId>rober</groupId>
+			<artifactId>wildfly-echos-ejb</artifactId>
+			<type>ejb</type>
+		</dependency>
+			
+		<dependency>
+			<groupId>rober</groupId>
 			<artifactId>wildfly-echos-jpa</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>rober</groupId>
+<<<<<<< HEAD
 			<artifactId>wildfly-echos-ejb</artifactId>
 			<type>ejb</type>
 		</dependency>		
 		<dependency>
 			<groupId>rober</groupId>
+=======
+>>>>>>> branch 'getByID' of https://github.com/MRoberr/wildfly-echos.git
 			<artifactId>wildfly-echos-common</artifactId>
 		</dependency>
 		
