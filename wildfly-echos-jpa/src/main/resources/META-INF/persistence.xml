@@ -4,8 +4,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="WildflyEchos"
 		transaction-type="JTA">
-		<jta-data-source>java:jboss/datasources/WildFlyEchosDS</jta-data-source>
-
+		<jta-data-source>java:jboss/datasources/WildflyEchosDS</jta-data-source>
 		<class>rober.wildfly.echos.jpa.Echo</class>
 	</persistence-unit>
 </persistence>
