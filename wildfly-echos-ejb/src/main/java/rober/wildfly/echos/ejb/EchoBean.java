@@ -28,8 +28,8 @@ public class EchoBean implements IEcho {
 
 	@Override
 	public int storeEcho(String message) {
-		int n = ((Number)oEntityManager.createNamedQuery("Echo.countAll").getSingleResult()).intValue();
-		Echo oEcho = new Echo(new Integer(n+1), message + " - " + getMost());
+		int n = ((Number) oEntityManager.createNamedQuery("Echo.countAll").getSingleResult()).intValue();
+		Echo oEcho = new Echo(new Integer(n + 1), message + " - " + getMost());
 		oEntityManager.persist(oEcho);
 		return 0;
 	}
@@ -46,6 +46,17 @@ public class EchoBean implements IEcho {
 		Root<Echo> member = criteria.from(Echo.class);
 		criteria.select(member).orderBy(cb.asc(member.get("message")));
 		return oEntityManager.createQuery(criteria).getResultList();
+	}
+
+	@Override
+	public List<Echo> searchEchos(String message) {
+		CriteriaBuilder cb = oEntityManager.getCriteriaBuilder();
+		CriteriaQuery<Echo> criteria = cb.createQuery(Echo.class);
+		Root<Echo> member = criteria.from(Echo.class);
+
+		criteria.select(member).where(cb.like(member.get("message"), "%"+message+"%")).orderBy(cb.asc(member.get("message")));
+		return oEntityManager.createQuery(criteria).getResultList();
+
 	}
 
 }

@@ -10,7 +10,8 @@
 </head>
 <body>
 	echo_list
-	<br /> name    	 date
+	<br /> #{echoer.name}
+	<br /> #{echoer.store}
 	<br />
 	<ui:repeat value="#{echoer.allEchos}" var="value">
     #{value.message} <br />

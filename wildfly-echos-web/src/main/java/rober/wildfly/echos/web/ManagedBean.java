@@ -17,7 +17,9 @@ public class ManagedBean implements Serializable, IEcho {
 
 	private static final long serialVersionUID = -2171004254593434311L;
 	private IEcho oEchoBean = null;
-
+	private int searchId;
+	private List<Echo> oEchos=null;
+	
 	public String getName() {
 		return "I am the ECHO bean.";
 	}
@@ -26,7 +28,7 @@ public class ManagedBean implements Serializable, IEcho {
 		if (oEchoBean == null) {
 			try {
 				InitialContext jndi = new InitialContext();
-				oEchoBean = (IEcho) jndi.lookup("java:global/wildfly-echos-ear-0.0.1-SNAPSHOT/wildfly-echos-ejb-0.0.1-SNAPSHOT/EchoBean");
+				oEchoBean = (IEcho) jndi.lookup(IEcho.jndiNAME);
 			} catch (NamingException e) {
 				e.printStackTrace();
 			}
@@ -51,6 +53,36 @@ public class ManagedBean implements Serializable, IEcho {
 	@Override
 	public List<Echo> getAllEchos() {
 		return getEchoBean().getAllEchos();
+	}
+
+	@Override
+	public List<Echo> searchEchos(String p_message) {	
+		String message=(String)p_message;
+		setoEchos(getEchoBean().searchEchos(message));
+		return null;
+	}
+	
+	
+//	public String getSearchEchos(String p_message){
+//		System.out.println(p_message);
+//		setoEchos(getEchoBean().searchEchos(p_message));
+//		return null;
+//	}
+
+	public int getSearchId() {
+		return searchId;
+	}
+
+	public void setSearchId(int searchId) {
+		this.searchId = searchId;
+	}
+
+	public List<Echo> getoEchos() {
+		return oEchos;
+	}
+
+	public void setoEchos(List<Echo> oEchos) {
+		this.oEchos = oEchos;
 	}
 
 }

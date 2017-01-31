@@ -6,14 +6,17 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
-<title>wildfly-echos-web | echo_list</title>
+<title>wildfly-echos-web | echo_list_search</title>
 </head>
 <body>
 	echo_list
-	<br /> name    	 date
 	<br />
-	<ui:repeat value="#{echoer.allEchos}" var="value">
+	<h:form>
+		<h:inputText binding="#{valtozo}" />
+		<h:commandButton binding="#{eredmeny}" value="Submit" action="#{echoer.searchEchos(valtozo.value)}" />
+	</h:form>	
+	<ui:repeat value="#{echoer.oEchos}" var="value">
     #{value.message} <br />
 	</ui:repeat>
 </body>
-</html> 
+</html>

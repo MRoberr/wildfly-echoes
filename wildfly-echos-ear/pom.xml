@@ -17,15 +17,14 @@
 
 		<dependency>
 			<groupId>rober</groupId>
-			<artifactId>wildfly-echos-common</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>rober</groupId>
 			<artifactId>wildfly-echos-ejb</artifactId>
 			<type>ejb</type>
+		</dependency>		
+		<dependency>
+			<groupId>rober</groupId>
+			<artifactId>wildfly-echos-common</artifactId>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>rober</groupId>
 			<artifactId>wildfly-echos-web</artifactId>
