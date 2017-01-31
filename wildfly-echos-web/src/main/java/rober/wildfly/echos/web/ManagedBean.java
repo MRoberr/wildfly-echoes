@@ -65,7 +65,7 @@ public String getUpdateName() {
 		return this.oEcho;
 	}
 	public int getStore() {
-		return storeEcho("Halihó őŐűŰ");
+		return 0;
 	}
 
 	@Override
@@ -91,14 +91,6 @@ public String getUpdateName() {
 		return oEchos;
 	}
 
-	public int getSearchId() {
-		return searchId;
-	}
-
-	public void setSearchId(int searchId) {
-		this.searchId = searchId;
-	}
-
 	public List<Echo> getoEchos() {
 		return oEchos;
 	}
@@ -108,9 +100,18 @@ public String getUpdateName() {
 		return getEchoBean().updateEcho(searchId,updateName);
 		
 	}
-	@Override
+	
 	public int updateEcho(){
 		updateEcho(this.searchId,this.updateName);
 		return 0;
+	}
+	
+	public int removeEcho() {
+		return removeEcho(searchId);
+	}
+
+	@Override
+	public int removeEcho(int id) {
+		return getEchoBean().removeEcho(id);
 	}
 }

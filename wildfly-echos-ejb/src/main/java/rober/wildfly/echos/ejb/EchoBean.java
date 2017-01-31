@@ -70,5 +70,12 @@ public class EchoBean implements IEcho {
 		return oEntityManager.createQuery(criteria).getResultList();
 
 	}
+	
+	@Override
+	public int removeEcho(int id) {
+		Echo echo = getEchoById(id);
+		oEntityManager.remove(echo);	
+		return 0;
+	}
 
 }

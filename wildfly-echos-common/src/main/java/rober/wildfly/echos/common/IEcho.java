@@ -12,4 +12,5 @@ public interface IEcho {
 	public List<Echo> getAllEchos();
 	public List<Echo> searchEchos(String message);
 	public int updateEcho(int id,String updateName);
+	int removeEcho(int id);
 }
