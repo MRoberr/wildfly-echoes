@@ -56,18 +56,10 @@ public class ManagedBean implements Serializable, IEcho {
 	}
 
 	@Override
-	public List<Echo> searchEchos(String p_message) {	
-		String message=(String)p_message;
-		setoEchos(getEchoBean().searchEchos(message));
-		return null;
+	public List<Echo> searchEchos(String message) {	
+		oEchos=getEchoBean().searchEchos(message);
+		return oEchos;
 	}
-	
-	
-//	public String getSearchEchos(String p_message){
-//		System.out.println(p_message);
-//		setoEchos(getEchoBean().searchEchos(p_message));
-//		return null;
-//	}
 
 	public int getSearchId() {
 		return searchId;
@@ -79,10 +71,6 @@ public class ManagedBean implements Serializable, IEcho {
 
 	public List<Echo> getoEchos() {
 		return oEchos;
-	}
-
-	public void setoEchos(List<Echo> oEchos) {
-		this.oEchos = oEchos;
 	}
 
 }
