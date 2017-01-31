@@ -1,4 +1,4 @@
-package rober.wildfly.echos.ejb;
+package rober.wildfly.echoes.ejb;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,9 +11,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import rober.wildfly.echos.common.IEcho;
-import rober.wildfly.echos.common.ITest;
-import rober.wildfly.echos.jpa.Echo;
+import rober.wildfly.echoes.common.IEcho;
+import rober.wildfly.echoes.common.ITest;
+import rober.wildfly.echoes.jpa.Echo;
 
 @Stateless
 public class EchoBean implements IEcho, ITest {

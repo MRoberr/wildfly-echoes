@@ -1,4 +1,4 @@
-package rober.wildfly.echos.jpa;
+package rober.wildfly.echoes.jpa;
 
 import java.io.Serializable;
 import javax.persistence.*;

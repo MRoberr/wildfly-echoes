@@ -1,4 +1,4 @@
-package rober.wildfly.echos.common;
+package rober.wildfly.echoes.common;
 
 public interface ITest {
 

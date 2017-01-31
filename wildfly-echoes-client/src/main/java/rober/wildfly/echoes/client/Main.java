@@ -1,4 +1,4 @@
-package rober.wildfly.echos.client;
+package rober.wildfly.echoes.client;
 
 import java.util.Hashtable;
 
@@ -6,7 +6,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import rober.wildfly.echos.common.IEcho;
+import rober.wildfly.echoes.common.IEcho;
 
 public class Main {
 

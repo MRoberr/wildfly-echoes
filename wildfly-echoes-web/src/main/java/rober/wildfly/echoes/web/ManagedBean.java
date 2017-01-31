@@ -1,4 +1,4 @@
-package rober.wildfly.echos.web;
+package rober.wildfly.echoes.web;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,8 +8,8 @@ import javax.inject.Named;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import rober.wildfly.echos.common.IEcho;
-import rober.wildfly.echos.jpa.Echo;
+import rober.wildfly.echoes.common.IEcho;
+import rober.wildfly.echoes.jpa.Echo;
 
 @Named("echoer")
 @ApplicationScoped

@@ -6,6 +6,6 @@
 		transaction-type="JTA">
 		<jta-data-source>java:jboss/datasources/WildflyEchosDS</jta-data-source>
 
-		<class>rober.wildfly.echos.jpa.Echo</class>
+		<class>rober.wildfly.echoes.jpa.Echo</class>
 	</persistence-unit>
 </persistence>
