@@ -11,4 +11,5 @@ public interface IEcho {
 	public Echo getEchoById(int p_id);
 	public List<Echo> getAllEchos();
 	public List<Echo> searchEchos(String message);
+	public int updateEcho(int id,String updateName);
 }

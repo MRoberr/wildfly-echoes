@@ -17,12 +17,29 @@ public class ManagedBean implements Serializable, IEcho {
 
 	private static final long serialVersionUID = -2171004254593434311L;
 	private IEcho oEchoBean = null;
+	private String updateName;
 	private int searchId;
 	private List<Echo> oEchos=null;
 	
 	private Integer id = null;
 	private Echo oEcho = null;
 
+public String getUpdateName() {
+		return updateName;
+	}
+
+	public void setUpdateName(String updateName) {
+		this.updateName = updateName;
+	}
+
+	public int getSearchId() {
+		return searchId;
+	}
+
+	public void setSearchId(int searchId) {
+		this.searchId = searchId;
+	}
+	
 	public String getName() {
 		return "I am the ECHO bean.";
 	}
@@ -84,5 +101,16 @@ public class ManagedBean implements Serializable, IEcho {
 
 	public List<Echo> getoEchos() {
 		return oEchos;
+	}
+	
+	@Override
+	public int updateEcho(int id,String updateName) {
+		return getEchoBean().updateEcho(searchId,updateName);
+		
+	}
+	@Override
+	public int updateEcho(){
+		updateEcho(this.searchId,this.updateName);
+		return 0;
 	}
 }

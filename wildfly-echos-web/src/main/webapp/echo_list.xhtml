@@ -9,7 +9,12 @@
 <title>wildfly-echos-web | echo_list</title>
 </head>
 <body>
-echo_list - #{echoer.name} - #{echoer.store} - #{echoer.allEchos}
+echo_list - #{echoer.name} -  #{echoer.store} - #{echoer.allEchos}
+<h:form>
+		<h:inputText value="#{echoer.searchId}" />
+		<h:inputText value="#{echoer.updateName}" />
+		<h:commandButton value="Submit" action="#{echoer.updateEcho()}" />
+	</h:form> 
 <br />
 <br />
  <h1>JSF 2 param example</h1>

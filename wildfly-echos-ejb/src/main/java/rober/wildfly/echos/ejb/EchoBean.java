@@ -49,7 +49,17 @@ public class EchoBean implements IEcho {
 		criteria.select(member).orderBy(cb.asc(member.get("message")));
 		return oEntityManager.createQuery(criteria).getResultList();
 	}
-
+	@Override
+	public int updateEcho(int id,String updateName) {
+		
+		Echo echo = getEchoById(id);
+		echo.setMessage(updateName);
+		oEntityManager.merge(echo);
+		
+		return 0;
+		
+	}
+	
 	@Override
 	public List<Echo> searchEchos(String message) {
 		CriteriaBuilder cb = oEntityManager.getCriteriaBuilder();
