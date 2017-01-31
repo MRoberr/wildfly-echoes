@@ -6,10 +6,17 @@
 		<artifactId>wildfly-echos</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	
 	<artifactId>wildfly-echos-ear</artifactId>
 	<packaging>ear</packaging>
 
 	<dependencies>
+		<dependency>
+			<groupId>rober</groupId>
+			<artifactId>wildfly-echos-ejb</artifactId>
+			<type>ejb</type>
+		</dependency>
+
 		<dependency>
 			<groupId>rober</groupId>
 			<artifactId>wildfly-echos-jpa</artifactId>
@@ -20,11 +27,6 @@
 			<artifactId>wildfly-echos-common</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>rober</groupId>
-			<artifactId>wildfly-echos-ejb</artifactId>
-			<type>ejb</type>
-		</dependency>
 
 		<dependency>
 			<groupId>rober</groupId>

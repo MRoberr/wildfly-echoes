@@ -48,4 +48,26 @@ public class EchoBean implements IEcho {
 		return oEntityManager.createQuery(criteria).getResultList();
 	}
 
+	@Override
+	public int updateEcho(int id,String updateName) {
+		
+		Echo echo = getEchoById(id);
+		echo.setMessage(updateName);
+		oEntityManager.merge(echo);
+		
+		return 0;
+		
+	}
+	@Override
+	public int updateEcho(){
+		return 0;
+	}
+	
+	
+
+	
+	
+
+	
+
 }

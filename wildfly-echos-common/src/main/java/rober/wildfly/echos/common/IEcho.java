@@ -10,4 +10,9 @@ public interface IEcho {
 	public Echo getEchoById(int p_id);
 	public List<Echo> getAllEchos();
 	
+	public int updateEcho(int id,String updateName);
+	int updateEcho();
+	
+	
+	
 }
